@@ -18,6 +18,10 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        //when player hits the obstacle destroy object
+        if(other.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
