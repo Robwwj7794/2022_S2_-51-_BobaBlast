@@ -7,27 +7,20 @@ public class GenerateLevel : MonoBehaviour
     //variables
     public GameObject[]  section;
     public int zPos = 50;
-    public bool createSection = false;
+    //public bool createSection = false;
     public int secNum;
 
-    void Update()
+    private void Start()
     {
-        //used to create sections then runs subroutine
-        if(createSection == false)
-        {
-            createSection = true;
-
-            StartCoroutine(GenerateSection());
-        }
+        GenerateSection();
     }
 
+
     //subroutine to randomize the sections placed after 8 seconds then repeat
-    IEnumerator GenerateSection()
+    public void GenerateSection()
     {
         secNum = Random.Range(0,3);
         Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
         zPos += 50;
-        yield return new WaitForSeconds(8);
-        createSection = false;
     }
 }
