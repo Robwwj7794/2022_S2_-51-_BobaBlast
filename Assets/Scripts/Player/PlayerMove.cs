@@ -43,4 +43,13 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Obstacle")
+        {
+            PlayerManager.gameOver = true;
+        }
+    }
+
+
 }
