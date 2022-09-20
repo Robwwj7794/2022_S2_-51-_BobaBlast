@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BobaPoints : MonoBehaviour
 {
+    private ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreManager = GameObject.Find("Canvas").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -18,6 +19,13 @@ public class BobaPoints : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        //when the player touches the boba destroy it and increment score by 1. 
+        if (other.gameObject.tag == "Player")
+        {
+            scoreManager.score += 1;
+            //update lastScore field to be the same as score
+            scoreManager.lastScore = scoreManager.score;
+            Destroy(gameObject);
+        }
     }
 }
