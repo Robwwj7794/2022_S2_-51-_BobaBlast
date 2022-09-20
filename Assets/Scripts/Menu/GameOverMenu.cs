@@ -1,21 +1,19 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class GameOverMenu : MonoBehaviour
 {
-
-    public void playGame()
+    public void RestartGame()
     {
+        //SceneManager.LoadScene("BobaBlast");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void quitGame()
+    public void QuitGame()
     {
-        Debug.Log("Quit!");
         Application.Quit();
     }
-
 
 }

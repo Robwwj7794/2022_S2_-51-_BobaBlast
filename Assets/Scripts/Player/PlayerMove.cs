@@ -6,7 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     //variables
     public float moveSpeed = 3;
-    public float leftRightSpeed = 4;
+    public float leftRightSpeed = 5;
+    private float maxSpeed = 15;
 
     //updates every frame
     void Update()
@@ -32,4 +33,23 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
+
+    public void SpeedUp()
+    {
+        //if moveSpeed is less that maxSpeed increment moveSpeed by 0.5
+        if (moveSpeed < maxSpeed)
+        {
+           moveSpeed = moveSpeed + 0.5f;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Obstacle")
+        {
+            PlayerManager.gameOver = true;
+        }
+    }
+
+
 }
