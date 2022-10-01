@@ -1466,8 +1466,8 @@ GameObject:
   - component: {fileID: 3691690099062406262}
   - component: {fileID: 1572292575713999735}
   - component: {fileID: 2502109369150371850}
+  - component: {fileID: 6067632447831065395}
   - component: {fileID: -2800024409264562372}
-  - component: {fileID: 8195402569680961834}
   m_Layer: 0
   m_Name: StrawberryBoba
   m_TagString: Untagged
@@ -1556,6 +1556,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &6067632447831065395
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9008337739622303029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5845795
+  m_Center: {x: 0.06516145, y: 4.5765995e-11, z: -1.8163068e-11}
 --- !u!114 &-2800024409264562372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1568,19 +1581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb58ffd8f15aee48a87d9e6d15ff452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &8195402569680961834
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9008337739622303029}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99999875, y: 1.0708979, z: 1.140744}
-  m_Center: {x: -0.00000021395671, y: -0.0057938322, z: -0.0012309118}
 --- !u!1 &9081140014593947877
 GameObject:
   m_ObjectHideFlags: 0
