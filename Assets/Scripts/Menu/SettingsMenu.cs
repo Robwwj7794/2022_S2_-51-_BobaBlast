@@ -27,7 +27,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void ApplyGraphics()
     {
-        Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, Screen.fullScreen);
+        Screen.SetResolution(resolutions[selectedResolution].horizontal, resolutions[selectedResolution].vertical, true);
+        Debug.Log("Graphics applied: " + selectedResolution);
     }
 
     public void ResLeft()

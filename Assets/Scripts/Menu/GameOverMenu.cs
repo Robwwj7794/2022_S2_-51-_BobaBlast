@@ -7,8 +7,8 @@ public class GameOverMenu : MonoBehaviour
 {
     public void RestartGame()
     {
-        //SceneManager.LoadScene("BobaBlast");
-        SceneManager.LoadScene(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("BobaBlast");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene());
     }
 
     public void QuitGame()
