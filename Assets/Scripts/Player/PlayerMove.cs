@@ -9,6 +9,14 @@ public class PlayerMove : MonoBehaviour
     public float leftRightSpeed = 5;
     private float maxSpeed = 15;
 
+
+
+    //At the start of the scene, fetch this objects rigidbody
+    void Start()
+    {
+
+    }
+
     //updates every frame
     void Update()
     {

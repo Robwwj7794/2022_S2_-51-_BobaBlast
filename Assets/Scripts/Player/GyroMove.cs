@@ -20,14 +20,16 @@ public class GyroMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         dirX = Input.acceleration.x * sideSpeed;
-        transform.position = new Vector3(Mathf.Clamp (transform.position.x, -7.5f, 7.5f), transform.position.y, transform.position.z);
+        //sets bounds of possible x positions
+        transform.position = new Vector3(Mathf.Clamp (transform.position.x, -3.7f, 3.7f), transform.position.y, transform.position.z);
     }
 
     void FixedUpdate()
     {
-        character.velocity = new Vector3(dirX, 0f, forwardSpeed);
+        //constant forward movement
+        transform.Translate(Vector3.forward * Time.deltaTime * forwardSpeed, Space.World);
+        //applies gyro position to x axis
+        transform.Translate(Vector3.right * Time.deltaTime * dirX);
     }
 }
