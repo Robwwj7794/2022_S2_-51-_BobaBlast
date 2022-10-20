@@ -9,7 +9,8 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text bobaScore;
     public int score = 0;
     public int lastScore = 0;
-    public int highScore; 
+    //public int highScore; 
+
     // Start is called before the first frame update
     void Start()
     {

@@ -51,6 +51,8 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Obstacle")
@@ -58,6 +60,6 @@ public class PlayerMove : MonoBehaviour
             PlayerManager.gameOver = true;
         }
     }
-
+    */
 
 }
