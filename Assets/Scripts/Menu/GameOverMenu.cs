@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    public void RestartGame()
-    {
-        SceneManager.LoadScene("BobaBlast");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene());
-    }
 
     public void QuitGame()
     {

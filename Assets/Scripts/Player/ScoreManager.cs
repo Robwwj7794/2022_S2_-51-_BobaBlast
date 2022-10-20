@@ -9,11 +9,12 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text bobaScore;
     public int score = 0;
     public int lastScore = 0;
+    public int highScore; 
     // Start is called before the first frame update
     void Start()
     {
         //set score to zero at the start of the game
-        bobaScore.text = score.ToString() + " Bobas";
+        bobaScore.text = "Current: " + score.ToString() + " Bobas";
     }
 
     // Update is called once per frame
@@ -23,7 +24,9 @@ public class ScoreManager : MonoBehaviour
         if(lastScore == score)
         {
             //updates the UI with the current score
-            bobaScore.text = score.ToString() + " Bobas";
+            bobaScore.text = "Current: " + score.ToString() + " Bobas";
         }
     }
+
+
 }
