@@ -6,6 +6,7 @@ public class Section : MonoBehaviour
 {
     GenerateLevel generateLevel;
     PlayerMove playerMove;
+    public static int sectionsPassed = 0;
 
     void Start()
     {
@@ -31,9 +32,11 @@ public class Section : MonoBehaviour
         //if object that triggers is "Player" tag call SpeedUp method
         if(other.gameObject.tag == "Player")
         {
+            sectionsPassed ++;
             generateLevel.GenerateSection();
             playerMove.SpeedUp();
 
+            Debug.Log("Sections passed: " + sectionsPassed);
         }
     }
 }

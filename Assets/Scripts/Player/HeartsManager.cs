@@ -15,16 +15,31 @@ public class HeartsManager : MonoBehaviour
     private bool isInvulnerable = false;
     private float invulnerableDuration = 1.5f;
 
-
     // Start is called before the first frame update
     void Start()
     {
         //character begins each game with a full set of hearts
         life = hearts.Length;
+        
     }
 
     public void Update()
     {
+        //the number of hearts reduces by 1 the longer the character has been running.
+        if (Section.sectionsPassed == 3)
+        {
+            numOfHearts = 4;
+        }
+        else if (Section.sectionsPassed == 7)
+        {
+            numOfHearts = 3;
+        }
+        else if (Section.sectionsPassed == 15)
+        {
+            numOfHearts = 2;
+        }
+
+
         //To make sure that the amount of lives do not exceed the amount of heart containers.
         if (life > numOfHearts)
         {
