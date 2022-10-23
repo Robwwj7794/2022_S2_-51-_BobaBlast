@@ -12,6 +12,9 @@ public class HeartsManager : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    private bool isInvulnerable = false;
+    private float invulnerableDuration = 1.5f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +62,7 @@ public class HeartsManager : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             //Hearts reduce each time the character hits an obstacle
-            --life;
+            Damage();
 
             //when the hearts reaches zero then its game over
             if (life < 1)
@@ -68,6 +71,36 @@ public class HeartsManager : MonoBehaviour
             }
 
         }
+    }
+
+    public void Damage()
+    {
+        //if isInvulnerable is true do not deduct life
+        if (isInvulnerable) return;
+
+        //deduct 1 life
+        --life;
+        //start 1.5 seconds of invulnerability
+        StartCoroutine(Invulnerable());
+    }
+
+    public void Heal()
+    {
+        //add 1 life
+        ++life;
+    }
+    
+    //adds 1.5 seconds of invulerability to character
+    private IEnumerator Invulnerable()
+    {
+        Debug.Log("Invulnerable!");
+        isInvulnerable = true;
+
+        yield return new WaitForSeconds(invulnerableDuration);
+
+        isInvulnerable = false;
+
+        Debug.Log("no longer invulnerable!");
     }
 
 }

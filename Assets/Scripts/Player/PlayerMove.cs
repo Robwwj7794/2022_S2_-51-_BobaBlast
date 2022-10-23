@@ -5,17 +5,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     //variables
-    public float moveSpeed = 3;
-    public float leftRightSpeed = 5;
-    private float maxSpeed = 15;
-
-
-
-    //At the start of the scene, fetch this objects rigidbody
-    void Start()
-    {
-
-    }
+    public float moveSpeed = 5.0f;
+    public float leftRightSpeed = 5.0f;
+    private float maxSpeed = 20.0f;
 
     //updates every frame
     void Update()
@@ -47,7 +39,7 @@ public class PlayerMove : MonoBehaviour
         //if moveSpeed is less that maxSpeed increment moveSpeed by 0.5
         if (moveSpeed < maxSpeed)
         {
-           moveSpeed = moveSpeed + 0.5f;
+           moveSpeed++;
         }
     }
 
