@@ -10,7 +10,7 @@ public class UpsideDownScreen : MonoBehaviour
     private float xRot = 360.0f;
     private float yRot = 360.0f;
     private float invertRot = 180.0f;
-    private float duration = 3;
+    private float duration = 1.0f;
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class UpsideDownScreen : MonoBehaviour
         //add 360 degrees rotation to the x and y axis. add 180 rotation to the z axis to flip the camera upside down
         cam.transform.Rotate(xRot, yRot, invertRot);
 
-        //disable meshrender and collider to remove object from game
+        //disable meshrender and collider to remove object from game viusally
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
 
